@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="dashboard">
+        <header class="header">
+            <div class="logo">
+                <span class="icon">📊</span>
+                <h1>Dynamic Dashboard</h1>
+            </div>
+            <div class="actions">
+                <button id="export-btn" class="btn export-btn" disabled>Export</button>
+                <button class="btn database-btn">Database</button>
+                <button class="btn visualize-btn">Visualize</button>
+            </div>
+        </header>
+
+        <div class="content">
+            <div class="sidebar">
+                <div class="tabs">
+                    <button class="tab active" data-tab="tables">Tables</button>
+                    <button class="tab" data-tab="datasets">Data sets</button>
+                </div>
+                <div class="tab-content">
+                    <div id="tables-content" class="tables-tab active">
+                        <div class="table-list">
+                            <h3>Database Tables</h3>
+                            <ul id="table-list"></ul>
+                        </div>
+                    </div>
+                    <div id="datasets-content" class="datasets-tab">
+                        <p>Saved datasets will appear here</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main">
+                <div class="attribute-section">
+                    <div class="attribute-selector">
+                        <div class="attributes-panel">
+                            <h3>Available Attributes</h3>
+                            <ul id="available-attributes" class="attributes-list"></ul>
+                        </div>
+                        
+                        <div class="controls">
+                            <button id="move-right" class="control-btn">&gt;&gt;</button>
+                            <button id="move-left" class="control-btn">&lt;&lt;</button>
+                        </div>
+                        
+                        <div class="attributes-panel">
+                            <h3>Selected Attributes</h3>
+                            <ul id="selected-attributes" class="attributes-list"></ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="data-section">
+                    <div class="table-container">
+                        <div id="data-table" class="data-table">
+                            <h3>Table with selected attributes</h3>
+                            <div class="table-controls">
+                                <div class="filter-controls">
+                                    <label for="filter-field">Filter by:</label>
+                                    <select id="filter-field"></select>
+                                    <select id="filter-operator">
+                                        <option value="equals">equals</option>
+                                        <option value="contains">contains</option>
+                                        <option value="greater">greater than</option>
+                                        <option value="less">less than</option>
+                                    </select>
+                                    <input type="text" id="filter-value" placeholder="Value">
+                                    <button id="apply-filter" class="btn">Apply Filter</button>
+                                    <button id="clear-filter" class="btn">Clear</button>
+                                </div>
+                                <div class="group-controls">
+                                    <label for="group-field">Group by:</label>
+                                    <select id="group-field"></select>
+                                    <button id="apply-group" class="btn">Group Data</button>
+                                    <button id="clear-group" class="btn">Clear</button>
+                                </div>
+                            </div>
+                            <table>
+                                <thead id="table-header"></thead>
+                                <tbody id="table-body"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="chart-container">
+                        <div class="visualizer">
+                            <div class="chart-controls">
+                                <select id="chart-type" class="chart-select">
+                                    <option value="pie">Pie Chart</option>
+                                    <option value="bar">Bar Chart</option>
+                                </select>
+                                
+                                <div class="axis-selectors">
+                                    <div class="axis-selector">
+                                        <label>Data Field:</label>
+                                        <select id="data-field"></select>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div id="chart-area">
+                                <canvas id="chart-canvas"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
