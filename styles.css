@@ -57,6 +57,89 @@ button {
     gap: 10px;
 }
 
+/* Filter and Group By Controls */
+.filter-controls, .group-controls {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 20px;
+    margin-bottom: 24px;
+    transition: box-shadow 0.3s ease;
+}
+
+.filter-controls:hover, .group-controls:hover {
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.filter-controls label, .group-controls label {
+    font-weight: 600;
+    margin-bottom: 8px;
+    display: block;
+    color: #333333;
+    font-size: 14px;
+}
+
+.filter-controls select, 
+.group-controls select, 
+.filter-controls input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    transition: all 0.25s ease;
+    font-size: 14px;
+    background-color: #f9f9f9;
+}
+
+.filter-controls select:hover, 
+.group-controls select:hover, 
+.filter-controls input:hover {
+    border-color: #bbbbbb;
+}
+
+.filter-controls select:focus, 
+.group-controls select:focus, 
+.filter-controls input:focus {
+    border-color: #2196F3;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.15);
+    background-color: #ffffff;
+}
+
+.filter-controls .btn, 
+.group-controls .btn {
+    width: 30%;
+    padding: 12px;
+    background-color: #898f34;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    transition: all 0.25s ease;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.filter-controls .btn:hover, 
+.group-controls .btn:hover {
+    background-color: #a1b33f;
+    transform: translateY(-1px);
+}
+
+.filter-controls .btn:active, 
+.group-controls .btn:active {
+    transform: translateY(1px);
+}
+
+.filter-controls .btn:disabled, 
+.group-controls .btn:disabled {
+    background-color: #a5d6a7;
+    cursor: not-allowed;
+    transform: none;
+    opacity: 0.7;
+}
+
 .btn {
     padding: 8px 16px;
     border-radius: 4px;
